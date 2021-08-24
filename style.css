@@ -1,0 +1,66 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap");
+
+:root {
+  --theme-color-pink: rgb(242, 131, 149);
+  --theme-bg: rgb(244, 223, 245);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.icon-letter {
+  cursor: pointer;
+  font-size: 3rem; /* 1rem = 16px */
+  color: var(--theme-color-pink);
+}
+
+body {
+  background-color: var(--theme-bg);
+}
+
+.letter .icon-letter {
+  box-shadow: 0 0 0 10px var(--theme-color-pink);
+  border-radius: 50%;
+  padding: 10px;
+}
+
+.box-letter {
+  background-color: white;
+  max-width: 500px;
+  padding: 10px;
+  border-radius: 4px;
+  opacity: 0.8;
+  margin: 8px auto;
+}
+
+.box-letter p {
+  font-size: 15px;
+  font-family: "Roboto Condensed", sans-serif;
+  text-shadow: 0 0 0 #000;
+  letter-spacing: 1px;
+  line-height: 24px;
+  text-align: justify;
+}
+
+.video {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+video {
+  width: 500px;
+}
+
+@media screen and (max-width: 640px) {
+  .box-letter {
+    overflow-y: auto;
+  }
+
+  video {
+    width: 300px;
+  }
+}
