@@ -4,6 +4,7 @@
   const $boxLetter = $(".box-letter");
   const $gift = $(".gift");
   const $video = $(".video");
+  const $boxCircle = $(".box-circle");
 
   const ICON = {
     letter: '<i class="fas fa-envelope"></i>',
@@ -14,7 +15,8 @@
     letter: false,
     video: {
         src: './public/videos/1.mp4'
-    }
+    },
+    next: false
   };
 
   $letter.children().on("click", function () {
@@ -30,8 +32,32 @@
     setTimeout(() => {
       $boxLetter.remove();
     }, 1000);
-    $video.show();
+    animation();
   });
+
+  var count = 1;
+
+  const animation = function () {
+
+    setTimeout( () => {
+      $boxCircle.show();
+      state.next = true;
+    }, 1000);
+
+    var animate = setInterval(() => {
+      count++;
+      $boxCircle.find('.img')[0].src = `./public/imgs/${count}.jpg`
+      if(count == 3) {      
+        clearInterval(animate);
+        setTimeout(() => {
+          $boxCircle.remove();
+          setTimeout(() => {
+            $video.show();
+          }, 500);
+        }, 1000);
+      }
+    }, 2000);
+  }
 
   // function common
   const timeRemoveLetter = function (openLetter, selector) {
@@ -43,6 +69,7 @@
   };
 
   $(function() {
+    $boxCircle.hide();
     $video.hide();
   })
 
