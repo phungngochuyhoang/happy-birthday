@@ -38,7 +38,6 @@
   var count = 1;
 
   const animation = function () {
-
     setTimeout( () => {
       $boxCircle.show();
       state.next = true;
